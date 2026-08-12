@@ -1,0 +1,36 @@
+public class ShoppingMallAuth {
+
+    static ArrayList<User> users = new ArrayList<>();
+
+    static String[] products = {
+        "Shoes",
+        "T-Shirt",
+        "Watch",
+        "Bag",
+        "Headphones"
+    };
+
+    static int[] prices = {
+        1500,
+        800,
+        2500,
+        1200,
+        3000
+    };
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("\n===== Shopping Mall =====");
+            System.out.println("1. Register");
+            System.out.println("2. Login");
+            System.out.println("3. Exit");
+            System.out.print("Enter Choice: ");
+
+            int choice = sc.nextInt();
+            sc.nextLine();
+
+            switch (choice) {
