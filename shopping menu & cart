@@ -1,0 +1,61 @@
+while (true) {
+
+    System.out.println("\n===== Shopping Menu =====");
+    System.out.println("1. Browse Products");
+    System.out.println("2. Add to Cart");
+    System.out.println("3. View Cart");
+    System.out.println("4. Checkout");
+    System.out.println("5. Logout");
+    System.out.print("Enter Choice: ");
+
+    int ch = sc.nextInt();
+    sc.nextLine();
+
+    switch (ch) {
+
+        case 1:
+            System.out.println("\nAvailable Products");
+
+            for (int i = 0; i < products.length; i++) {
+                System.out.println(
+                    (i + 1) + ". " + products[i] +
+                    " - Rs." + prices[i]
+                );
+            }
+            break;
+
+        case 2:
+            System.out.println("\nAvailable Products");
+
+            for (int i = 0; i < products.length; i++) {
+                System.out.println(
+                    (i + 1) + ". " + products[i] +
+                    " - Rs." + prices[i]
+                );
+            }
+
+            System.out.print("Enter Product Number: ");
+            int p = sc.nextInt();
+            sc.nextLine();
+
+            if (p >= 1 && p <= products.length) {
+                u.cart.add(products[p - 1]);
+                System.out.println(
+                    products[p - 1] + " Added to Cart."
+                );
+            } else {
+                System.out.println("Invalid Product");
+            }
+            break;
+
+        case 3:
+            if (u.cart.isEmpty()) {
+                System.out.println("Cart is Empty");
+            } else {
+                System.out.println("\nYour Cart");
+
+                for (String item : u.cart) {
+                    System.out.println(item);
+                }
+            }
+            break;
