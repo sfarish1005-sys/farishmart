@@ -1,0 +1,69 @@
+case 4:
+    if (u.cart.isEmpty()) {
+        System.out.println("Cart is Empty");
+    } else {
+
+        int total = 0;
+
+        System.out.println("\nCheckout");
+
+        for (String item : u.cart) {
+
+            for (int i = 0; i < products.length; i++) {
+
+                if (item.equals(products[i])) {
+                    System.out.println(
+                        item + " - Rs." + prices[i]
+                    );
+
+                    total += prices[i];
+                }
+            }
+        }
+
+        System.out.println("Total Amount = Rs." + total);
+        System.out.println("Order Placed Successfully!");
+
+        u.cart.clear();
+    }
+    break;
+
+case 5:
+    System.out.println("Logged Out");
+    break;
+
+default:
+    System.out.println("Invalid Choice");
+}
+
+if (ch == 5) {
+    break;
+}
+
+}
+
+break;
+}
+
+}
+
+if (!found) {
+    System.out.println("Invalid Email or Password");
+}
+
+break;
+
+case 3:
+    System.out.println("Thank You!");
+    sc.close();
+    System.exit(0);
+    break;
+
+default:
+    System.out.println("Invalid Choice");
+}
+
+}
+
+}
+}
