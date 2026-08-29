@@ -36,3 +36,36 @@ public class ShoppingMallAuth {
             sc.nextLine();
 
             switch (choice) {
+case 1:
+    System.out.print("Enter Name: ");
+    String name = sc.nextLine();
+
+    System.out.print("Enter Email: ");
+    String email = sc.nextLine();
+
+    System.out.print("Enter Password: ");
+    String password = sc.nextLine();
+
+    users.add(new User(name, email, password));
+
+    System.out.println("Registration Successful!");
+    break;
+
+case 2:
+    System.out.print("Enter Email: ");
+    String loginEmail = sc.nextLine();
+
+    System.out.print("Enter Password: ");
+    String loginPassword = sc.nextLine();
+
+    boolean found = false;
+
+    for (User u : users) {
+
+        if (u.email.equals(loginEmail) &&
+            u.password.equals(loginPassword)) {
+
+            found = true;
+
+            System.out.println("Login Successful!");
+            System.out.println("Welcome " + u.name);
