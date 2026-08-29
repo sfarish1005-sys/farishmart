@@ -78,7 +78,8 @@ public class ShoppingMallAuth {
                                 System.out.println("1. Browse Products");
                                 System.out.println("2. Add to Cart");
                                 System.out.println("3. View Cart");
-                                System.out.println("4. Logout");
+                                System.out.println("4. Checkout");
+                                System.out.println("5. Logout");
                                 System.out.print("Enter Choice: ");
 
                                 int ch = sc.nextInt();
@@ -113,6 +114,7 @@ public class ShoppingMallAuth {
 
                                         if (p >= 1 && p <= products.length) {
                                             u.cart.add(products[p - 1]);
+
                                             System.out.println(
                                                 products[p - 1] + " Added to Cart."
                                             );
@@ -134,6 +136,42 @@ public class ShoppingMallAuth {
                                         break;
 
                                     case 4:
+                                        if (u.cart.isEmpty()) {
+                                            System.out.println("Cart is Empty");
+                                        } else {
+
+                                            int total = 0;
+
+                                            System.out.println("\n===== Checkout =====");
+
+                                            for (String item : u.cart) {
+
+                                                for (int i = 0; i < products.length; i++) {
+
+                                                    if (item.equals(products[i])) {
+
+                                                        System.out.println(
+                                                            item + " - Rs." + prices[i]
+                                                        );
+
+                                                        total += prices[i];
+                                                    }
+                                                }
+                                            }
+
+                                            System.out.println(
+                                                "Total Amount = Rs." + total
+                                            );
+
+                                            System.out.println(
+                                                "Order Placed Successfully!"
+                                            );
+
+                                            u.cart.clear();
+                                        }
+                                        break;
+
+                                    case 5:
                                         System.out.println("Logged Out!");
                                         break;
 
@@ -141,7 +179,7 @@ public class ShoppingMallAuth {
                                         System.out.println("Invalid Choice");
                                 }
 
-                                if (ch == 4) {
+                                if (ch == 5) {
                                     break;
                                 }
                             }
